@@ -28,7 +28,7 @@ export default function AboutSection() {
               <img src={logo} alt="Stoa Intelligence Discobolus mark" width={32} height={32} className="h-8 w-8 object-contain" />
             </div>
             <p className="label-eyebrow text-accent mb-6">Why Stoa Intelligence</p>
-            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-foreground mb-8 leading-snug tracking-tight">
+            <h2 className="font-heading font-light text-3xl sm:text-4xl text-foreground mb-8 leading-snug tracking-tight">
               Precision is a <span className="text-gradient-blue">discipline</span>, not a personality trait.
             </h2>
             <div className="space-y-5 font-body text-base text-muted-foreground leading-relaxed">

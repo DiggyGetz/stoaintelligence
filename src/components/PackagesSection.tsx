@@ -65,7 +65,7 @@ export default function PackagesSection() {
     <section id="packages" className="relative py-32 bg-background overflow-hidden">
       <div ref={ref} className="fade-in-section relative container mx-auto px-6">
         <p className="label-eyebrow text-accent mb-6 text-center">Engagements</p>
-        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-center text-foreground mb-4 tracking-tight">
+        <h2 className="font-heading font-light text-3xl sm:text-4xl text-center text-foreground mb-4 tracking-tight">
           Three commissions. <span style={gradientTextStyle}>Built to your scale.</span>
         </h2>
         <p className="font-body text-base text-muted-foreground text-center max-w-2xl mx-auto mb-20">
@@ -110,7 +110,7 @@ export default function PackagesSection() {
               <header className="relative mb-6">
                 <p className="label-eyebrow text-accent mb-3">{p.tagline}</p>
                 <h3
-                  className="font-heading font-bold text-2xl mb-2 tracking-tight"
+                  className="font-heading font-light text-2xl mb-2 tracking-tight"
                   style={p.emphasis ? gradientTextStyle : { color: "hsl(222 47% 11%)" }}
                 >
                   {p.name}

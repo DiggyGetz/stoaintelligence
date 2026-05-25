@@ -29,7 +29,7 @@ export default function Footer() {
       <div className="relative container mx-auto px-6">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <span className="flex items-center gap-2.5 font-heading font-semibold text-lg mb-6">
+            <span className="flex items-center gap-2.5 font-heading font-normal text-lg mb-6">
               <img
                 src={logo}
                 alt="Stoa Intelligence logo"

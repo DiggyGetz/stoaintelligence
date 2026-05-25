@@ -46,7 +46,7 @@ export default function ProcessSection() {
     >
       <div ref={ref} className="fade-in-section relative container mx-auto px-6 max-w-6xl">
         <p className="label-eyebrow text-accent mb-6 text-center">The Method</p>
-        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-center text-foreground mb-4 tracking-tight">
+        <h2 className="font-heading font-light text-3xl sm:text-4xl text-center text-foreground mb-4 tracking-tight">
           Survey · Blueprint · Build · <span style={numeralStyle}>Refine</span>
         </h2>
         <p className="font-body text-base text-muted-foreground text-center max-w-2xl mx-auto mb-20">
@@ -75,7 +75,7 @@ export default function ProcessSection() {
               >
                 {p.numeral}
               </span>
-              <h3 className="font-heading font-semibold text-xl text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+              <h3 className="font-heading font-normal text-xl text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
                 {p.title}
               </h3>
               <div className="h-px w-12 bg-accent/60 mb-5" />

@@ -33,7 +33,7 @@ export default function HeroSection() {
         >
           ​
         </p>
-        <h1 className="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-white mb-10 tracking-tight">
+        <h1 className="font-heading font-light text-4xl sm:text-5xl lg:text-6xl leading-[1.1] text-white mb-10 tracking-tight">
           Nothing stands without a foundation.
         </h1>
         <p className="font-body text-base sm:text-lg text-white/90 max-w-2xl mx-auto leading-relaxed mb-6">

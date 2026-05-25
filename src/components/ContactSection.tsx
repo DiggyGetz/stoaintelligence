@@ -45,7 +45,7 @@ export default function ContactSection() {
     <section id="contact" className="relative py-32 border-t border-border bg-background overflow-hidden">
       <div ref={ref} className="fade-in-section relative container mx-auto px-6 max-w-5xl">
         <p className="label-eyebrow text-accent mb-6 text-center">Start a Conversation</p>
-        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-center text-foreground mb-6 tracking-tight">
+        <h2 className="font-heading font-light text-3xl sm:text-4xl text-center text-foreground mb-6 tracking-tight">
           Two ways in. <span className="text-gradient-blue">Both reach the founder.</span>
         </h2>
         <p className="font-body text-base text-muted-foreground text-center max-w-2xl mx-auto mb-16">
