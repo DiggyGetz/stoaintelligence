@@ -1,9 +1,10 @@
+import type { CSSProperties } from "react";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 import logo from "@/assets/logo-clean.png";
 
 const CALENDLY = "https://calendly.com/dignangetz";
 
-const gradientText: React.CSSProperties = {
+const gradientText: CSSProperties = {
   background: "linear-gradient(135deg, hsl(36 70% 78%) 0%, hsl(32 48% 52%) 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
@@ -25,7 +26,6 @@ export default function ProofSection() {
       className="relative py-32 border-t border-border overflow-hidden"
       style={{ background: "hsl(217 42% 8%)" }}
     >
-      {/* Soft glow orbs */}
       <div aria-hidden className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-0 left-1/3 w-[480px] h-[480px] rounded-full"
           style={{ background: "hsl(32 42% 40% / 0.07)", filter: "blur(100px)" }} />
@@ -40,14 +40,11 @@ export default function ProofSection() {
           <img src={logo} alt="Stoa Intelligence mark" width={40} height={40}
             className="h-10 w-10 object-contain" style={{ opacity: 0.8 }} />
         </div>
-
         <p className="label-eyebrow text-accent mb-6">Founding Clients</p>
-
         <h2 className="font-heading font-normal text-4xl sm:text-5xl leading-tight mb-6 text-foreground">
           Three commissions open{" "}
           <span style={gradientText}>this quarter.</span>
         </h2>
-
         <p className="font-body text-base leading-relaxed max-w-xl mx-auto mb-14"
           style={{ color: "hsl(36 32% 90% / 0.65)" }}>
           Locked pricing for 12 months. The founder's direct attention. A public case-study credit
