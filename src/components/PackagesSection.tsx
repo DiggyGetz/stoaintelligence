@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 
 const CALENDLY = "https://calendly.com/dignangetz";
@@ -50,7 +51,7 @@ const packages: Package[] = [
   },
 ];
 
-const gradientTextStyle: React.CSSProperties = {
+const gradientTextStyle: CSSProperties = {
   background: "linear-gradient(135deg, hsl(36 70% 80%) 0%, hsl(32 52% 54%) 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
@@ -62,12 +63,8 @@ export default function PackagesSection() {
 
   return (
     <section id="packages" className="relative py-32 border-t border-border overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse at 50% 0%, hsl(32 42% 30% / 0.07) 0%, transparent 60%)",
-        }}
+      <div aria-hidden className="absolute inset-0 pointer-events-none"
+        style={{ background: "radial-gradient(ellipse at 50% 0%, hsl(32 42% 30% / 0.07) 0%, transparent 60%)" }}
       />
       <div ref={ref} className="fade-in-section relative container mx-auto px-6">
         <p className="label-eyebrow mb-6 text-center">Engagements</p>
@@ -101,27 +98,17 @@ export default function PackagesSection() {
             >
               {p.emphasis && (
                 <div aria-hidden className="absolute inset-0 pointer-events-none"
-                  style={{
-                    background: "radial-gradient(ellipse at 50% 0%, hsl(32 60% 40% / 0.12) 0%, transparent 55%)",
-                  }}
+                  style={{ background: "radial-gradient(ellipse at 50% 0%, hsl(32 60% 40% / 0.12) 0%, transparent 55%)" }}
                 />
               )}
-
               <header className="relative mb-6">
                 <p className="label-eyebrow text-accent mb-3">{p.tagline}</p>
-                <h3
-                  className="font-heading text-2xl mb-2"
-                  style={p.emphasis ? gradientTextStyle : {}}
-                >
+                <h3 className="font-heading text-2xl mb-2" style={p.emphasis ? gradientTextStyle : {}}>
                   {p.name}
                 </h3>
                 <div className="hairline mt-3" />
               </header>
-
-              <p className="relative font-body text-sm text-muted-foreground leading-relaxed mb-6">
-                {p.pain}
-              </p>
-
+              <p className="relative font-body text-sm text-muted-foreground leading-relaxed mb-6">{p.pain}</p>
               <ul className="relative space-y-3 mb-8 flex-1">
                 {p.includes.map((line) => (
                   <li key={line} className="font-body text-sm text-foreground leading-relaxed flex gap-3">
@@ -130,7 +117,6 @@ export default function PackagesSection() {
                   </li>
                 ))}
               </ul>
-
               <a
                 href={CALENDLY}
                 target="_blank"
@@ -138,7 +124,7 @@ export default function PackagesSection() {
                 className={`relative inline-block text-center px-6 py-3 text-xs font-body tracking-widest uppercase transition-all duration-500 ${
                   p.emphasis
                     ? "bg-accent text-accent-foreground hover:bg-accent/90"
-                    : "border border-accent/50 text-accent hover:border-accent hover:bg-accent/8"
+                    : "border border-accent/50 text-accent hover:border-accent hover:bg-accent/10"
                 }`}
               >
                 Discuss the Engagement
@@ -146,7 +132,6 @@ export default function PackagesSection() {
             </article>
           ))}
         </div>
-
         <p className="font-body text-xs tracking-widest uppercase text-muted-foreground text-center mt-10">
           Engagements are scoped to fit. Pricing is shared on the first call.
         </p>
