@@ -25,23 +25,25 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-background/95 backdrop-blur-sm border-b border-border"
+          ? "bg-white/90 backdrop-blur-md border-b border-border"
           : "bg-transparent"
       }`}
     >
       {!scrolled && (
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-background/80 via-background/35 to-transparent"
+          className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-black/50 to-transparent"
         />
       )}
-      <div className="container mx-auto relative flex items-center justify-between py-5 px-6 gap-6">
+      <div className="container mx-auto relative flex items-center justify-between py-4 px-6 gap-6">
         <a
           href="#top"
-          className="flex items-center gap-2.5 font-heading text-base lg:text-lg text-foreground tracking-tight whitespace-nowrap"
-          style={!scrolled ? { textShadow: "0 1px 8px hsl(217 40% 5% / 0.85)" } : undefined}
+          className={`flex items-center gap-2.5 font-heading font-semibold text-base lg:text-lg tracking-tight whitespace-nowrap ${
+            scrolled ? "text-foreground" : "text-white"
+          }`}
+          style={!scrolled ? { textShadow: "0 1px 8px rgba(10,15,30,0.85)" } : undefined}
         >
           <img
             src={logo}
@@ -58,12 +60,12 @@ export default function Header() {
             <a
               key={l.href}
               href={l.href}
-              className={`text-xs font-body tracking-widest uppercase transition-colors duration-500 ${
+              className={`text-xs font-body font-medium tracking-widest uppercase transition-colors duration-300 ${
                 scrolled
-                  ? "text-muted-foreground hover:text-foreground"
-                  : "text-foreground/85 hover:text-foreground"
+                  ? "text-muted-foreground hover:text-accent"
+                  : "text-white/85 hover:text-white"
               }`}
-              style={!scrolled ? { textShadow: "0 1px 6px hsl(217 40% 5% / 0.8)" } : undefined}
+              style={!scrolled ? { textShadow: "0 1px 6px rgba(10,15,30,0.8)" } : undefined}
             >
               {l.label}
             </a>
@@ -72,14 +74,14 @@ export default function Header() {
             href={CALENDLY}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-body tracking-widest uppercase border border-accent text-accent px-4 py-2 hover:bg-accent hover:text-accent-foreground transition-all duration-500 whitespace-nowrap"
+            className="text-xs font-body font-semibold tracking-widest uppercase bg-accent text-white px-4 py-2 rounded-md hover:bg-accent/90 transition-all duration-300 whitespace-nowrap shadow-[0_4px_14px_-4px_rgba(59,130,246,0.5)]"
           >
             Book a Free Walkthrough
           </a>
         </nav>
 
         <button
-          className="md:hidden text-foreground"
+          className={`md:hidden ${scrolled ? "text-foreground" : "text-white"}`}
           aria-label={mobileOpen ? "Close menu" : "Open menu"}
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen(!mobileOpen)}
@@ -89,13 +91,13 @@ export default function Header() {
       </div>
 
       {mobileOpen && (
-        <div className="md:hidden bg-background/98 backdrop-blur-sm border-b border-border px-6 pb-6 space-y-5">
+        <div className="md:hidden bg-white/98 backdrop-blur-md border-b border-border px-6 pb-6 space-y-5">
           {navLinks.map((l) => (
             <a
               key={l.href}
               href={l.href}
               onClick={() => setMobileOpen(false)}
-              className="block text-xs font-body tracking-widest uppercase text-muted-foreground hover:text-foreground transition-colors"
+              className="block text-xs font-body font-medium tracking-widest uppercase text-muted-foreground hover:text-accent transition-colors"
             >
               {l.label}
             </a>
@@ -105,7 +107,7 @@ export default function Header() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => setMobileOpen(false)}
-            className="block text-xs font-body tracking-widest uppercase text-accent"
+            className="block text-xs font-body font-semibold tracking-widest uppercase text-accent"
           >
             Book a Free Walkthrough →
           </a>
