@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["DM Sans", "Inter", "sans-serif"],
+        heading: ["Space Grotesk", "Inter", "sans-serif"],
         body: ["Inter", "sans-serif"],
       },
       letterSpacing: {
