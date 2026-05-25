@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { useScrollFadeIn } from "@/hooks/useScrollFadeIn";
 
 const phases = [
@@ -27,11 +28,24 @@ const phases = [
   },
 ];
 
-const numeralStyle: React.CSSProperties = {
+const numeralStyle: CSSProperties = {
   background: "linear-gradient(135deg, hsl(36 70% 75%) 0%, hsl(32 44% 46%) 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
   backgroundClip: "text",
+};
+
+const cardBase: CSSProperties = {
+  background: "hsl(217 36% 11% / 0.8)",
+  backdropFilter: "blur(10px)",
+  WebkitBackdropFilter: "blur(10px)",
+  border: "1px solid hsl(32 42% 52% / 0.12)",
+  boxShadow: "0 4px 24px -8px hsl(217 60% 4% / 0.4)",
+};
+
+const cardHover: CSSProperties = {
+  border: "1px solid hsl(32 42% 52% / 0.35)",
+  boxShadow: "0 8px 40px -8px hsl(32 42% 20% / 0.3)",
 };
 
 export default function ProcessSection() {
@@ -42,9 +56,7 @@ export default function ProcessSection() {
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
-        style={{
-          background: "radial-gradient(ellipse at 50% 100%, hsl(32 42% 28% / 0.06) 0%, transparent 55%)",
-        }}
+        style={{ background: "radial-gradient(ellipse at 50% 100%, hsl(32 42% 28% / 0.06) 0%, transparent 55%)" }}
       />
       <div ref={ref} className="fade-in-section relative container mx-auto px-6 max-w-6xl">
         <p className="label-eyebrow mb-6 text-center">The Method</p>
@@ -60,30 +72,16 @@ export default function ProcessSection() {
             <div
               key={p.title}
               className="group relative p-8 flex flex-col transition-all duration-500 hover:-translate-y-1"
-              style={{
-                background: "hsl(217 36% 11% / 0.8)",
-                backdropFilter: "blur(10px)",
-                WebkitBackdropFilter: "blur(10px)",
-                border: "1px solid hsl(32 42% 52% / 0.12)",
-                boxShadow: "0 4px 24px -8px hsl(217 60% 4% / 0.4)",
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLDivElement).style.border = "1px solid hsl(32 42% 52% / 0.35)";
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "0 8px 40px -8px hsl(32 42% 20% / 0.3)";
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLDivElement).style.border = "1px solid hsl(32 42% 52% / 0.12)";
-                (e.currentTarget as HTMLDivElement).style.boxShadow = "0 4px 24px -8px hsl(217 60% 4% / 0.4)";
-              }}
+              style={cardBase}
+              onMouseEnter={(e) => Object.assign((e.currentTarget as HTMLElement).style, cardHover)}
+              onMouseLeave={(e) => Object.assign((e.currentTarget as HTMLElement).style, cardBase)}
             >
-              {/* Step connector */}
               {i < phases.length - 1 && (
                 <div aria-hidden
                   className="hidden md:block absolute -right-2.5 top-9 w-5 h-px z-10"
                   style={{ background: "linear-gradient(to right, hsl(32 42% 52% / 0.35), transparent)" }}
                 />
               )}
-
               <span className="font-body text-4xl font-light mb-6 leading-none block" style={numeralStyle}>
                 {p.numeral}
               </span>
@@ -91,9 +89,7 @@ export default function ProcessSection() {
                 {p.title}
               </h3>
               <div className="hairline mb-5" />
-              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
-                {p.body}
-              </p>
+              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{p.body}</p>
               <p className="label-eyebrow mb-1" style={{ color: "hsl(32 42% 52% / 0.7)" }}>Deliverable</p>
               <p className="font-body text-xs leading-relaxed" style={{ color: "hsl(36 32% 90% / 0.65)" }}>
                 {p.deliverable}
