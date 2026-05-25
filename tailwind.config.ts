@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Inter", "sans-serif"],
+        heading: ["Geist", "Inter", "sans-serif"],
         body: ["Inter", "sans-serif"],
       },
       letterSpacing: {
