@@ -24,19 +24,11 @@ export default function IndustriesSection() {
   const ref = useScrollFadeIn();
 
   return (
-    <section id="industries" className="relative py-32 border-t border-border bg-secondary/40 overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 50%, hsl(217 38% 13% / 0.4) 0%, transparent 70%)",
-        }}
-      />
+    <section id="industries" className="relative py-32 border-t border-border bg-card overflow-hidden">
       <div ref={ref} className="fade-in-section relative container mx-auto px-6 max-w-5xl">
-        <p className="label-eyebrow mb-6 text-center">Who We Work With</p>
-        <h2 className="font-heading font-normal text-3xl sm:text-4xl text-center text-foreground mb-6">
-          When ambition <span className="text-accent">outpaces infrastructure.</span>
+        <p className="label-eyebrow text-accent mb-6 text-center">Who We Work With</p>
+        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-center text-foreground mb-6 tracking-tight">
+          When ambition <span className="text-gradient-blue">outpaces infrastructure.</span>
         </h2>
         <p className="font-body text-base text-muted-foreground text-center max-w-2xl mx-auto mb-16 leading-relaxed">
           Stoa Intelligence works with smaller businesses and fast-growing operators who've started running

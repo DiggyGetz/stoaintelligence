@@ -105,19 +105,11 @@ export default function WalkthroughSection() {
   };
 
   return (
-    <section id="audit" className="relative py-32 border-t border-border overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 30%, hsl(217 38% 14% / 0.5) 0%, transparent 65%)",
-        }}
-      />
+    <section id="audit" className="relative py-32 border-t border-border overflow-hidden bg-card">
       <div ref={ref} className="fade-in-section relative container mx-auto px-6 max-w-3xl">
-        <p className="label-eyebrow mb-6 text-center">Free Walkthrough</p>
-        <h2 className="font-heading font-normal text-3xl sm:text-4xl text-center text-foreground mb-4">
-          Tell us where it hurts. <span className="text-accent">We'll tell you where to cut.</span>
+        <p className="label-eyebrow text-accent mb-6 text-center">Free Walkthrough</p>
+        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-center text-foreground mb-4 tracking-tight">
+          Tell us where it hurts. <span className="text-gradient-blue">We'll tell you where to cut.</span>
         </h2>
         <p className="font-body text-base text-muted-foreground text-center max-w-2xl mx-auto mb-12 leading-relaxed">
           Answer seven short questions and we'll send back a personalized opportunity report — what
@@ -130,7 +122,7 @@ export default function WalkthroughSection() {
             href={CALENDLY}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-3 text-sm font-body tracking-widest uppercase border border-accent bg-accent text-accent-foreground hover:bg-accent/90 transition-all duration-500"
+            className="inline-flex items-center gap-2 px-8 py-3 text-sm font-body font-semibold tracking-widest uppercase bg-accent text-white hover:bg-accent/90 transition-all duration-300 rounded-md shadow-[0_8px_24px_-8px_rgba(59,130,246,0.5)]"
           >
             Book a Free Walkthrough <ExternalLink size={14} />
           </a>
