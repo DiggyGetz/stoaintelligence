@@ -108,7 +108,7 @@ export default function WalkthroughSection() {
     <section id="audit" className="relative py-32 border-t border-border overflow-hidden bg-card">
       <div ref={ref} className="fade-in-section relative container mx-auto px-6 max-w-3xl">
         <p className="label-eyebrow text-accent mb-6 text-center">Free Walkthrough</p>
-        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-center text-foreground mb-4 tracking-tight">
+        <h2 className="font-heading font-light text-3xl sm:text-4xl text-center text-foreground mb-4 tracking-tight">
           Tell us where it hurts. <span className="text-gradient-blue">We'll tell you where to cut.</span>
         </h2>
         <p className="font-body text-base text-muted-foreground text-center max-w-2xl mx-auto mb-12 leading-relaxed">

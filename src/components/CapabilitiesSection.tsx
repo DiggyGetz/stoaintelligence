@@ -51,7 +51,7 @@ export default function CapabilitiesSection() {
     <section id="capabilities" className="relative py-32 border-t border-border overflow-hidden bg-card">
       <div ref={ref} className="fade-in-section relative container mx-auto px-6">
         <p className="label-eyebrow text-accent mb-6 text-center">Core Capabilities</p>
-        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-center text-foreground mb-4 tracking-tight">
+        <h2 className="font-heading font-light text-3xl sm:text-4xl text-center text-foreground mb-4 tracking-tight">
           What we build, <span className="text-gradient-blue">in plain terms.</span>
         </h2>
         <p className="font-body text-base text-muted-foreground text-center max-w-2xl mx-auto mb-20">
@@ -66,7 +66,7 @@ export default function CapabilitiesSection() {
               style={{ boxShadow: "0 4px 16px -4px rgba(15,23,42,0.06)" }}
             >
               <c.icon className="text-accent mb-6" size={28} strokeWidth={1.5} />
-              <h3 className="font-heading font-semibold text-xl text-foreground mb-3 tracking-tight">{c.title}</h3>
+              <h3 className="font-heading font-normal text-xl text-foreground mb-3 tracking-tight">{c.title}</h3>
               <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">{c.body}</p>
               <p className="label-eyebrow mb-3 text-accent/80">For example</p>
               <ul className="space-y-2">

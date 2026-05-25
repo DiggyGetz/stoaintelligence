@@ -51,7 +51,7 @@ export default function ProofSection() {
         <p className="font-body text-xs tracking-widest uppercase text-[#60a5fa] font-semibold mb-6">
           Founding Clients
         </p>
-        <h2 className="font-heading font-bold text-4xl sm:text-5xl leading-tight mb-6 text-white tracking-tight">
+        <h2 className="font-heading font-light text-4xl sm:text-5xl leading-tight mb-6 text-white tracking-tight">
           Three commissions open <span style={gradientText}>this quarter.</span>
         </h2>
         <p className="font-body text-base leading-relaxed max-w-xl mx-auto mb-14 text-white/70">
@@ -72,7 +72,7 @@ export default function ProofSection() {
                 boxShadow: "0 20px 60px -20px rgba(0,0,0,0.6)",
               }}
             >
-              <p className="font-heading font-bold text-5xl mb-3" style={gradientText}>
+              <p className="font-heading font-light text-5xl mb-3" style={gradientText}>
                 {stat}
               </p>
               <p className="font-body text-xs tracking-widest uppercase text-white/55 font-medium">

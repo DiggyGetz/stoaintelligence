@@ -40,7 +40,7 @@ export default function Header() {
       <div className="container mx-auto relative flex items-center justify-between py-4 px-6 gap-6">
         <a
           href="#top"
-          className={`flex items-center gap-2.5 font-heading font-semibold text-base lg:text-lg tracking-tight whitespace-nowrap ${
+          className={`flex items-center gap-2.5 font-heading font-normal text-base lg:text-lg tracking-tight whitespace-nowrap ${
             scrolled ? "text-foreground" : "text-white"
           }`}
           style={!scrolled ? { textShadow: "0 1px 8px rgba(10,15,30,0.85)" } : undefined}
