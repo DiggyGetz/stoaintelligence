@@ -48,31 +48,27 @@ export default function CapabilitiesSection() {
   const ref = useScrollFadeIn();
 
   return (
-    <section id="capabilities" className="relative py-32 border-t border-border overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            "radial-gradient(ellipse at 50% 50%, hsl(217 38% 13% / 0.5) 0%, transparent 70%)",
-        }}
-      />
+    <section id="capabilities" className="relative py-32 border-t border-border overflow-hidden bg-card">
       <div ref={ref} className="fade-in-section relative container mx-auto px-6">
-        <p className="label-eyebrow mb-6 text-center">Core Capabilities</p>
-        <h2 className="font-heading font-normal text-3xl sm:text-4xl text-center text-foreground mb-4">
-          What we build, <span className="text-accent">in plain terms.</span>
+        <p className="label-eyebrow text-accent mb-6 text-center">Core Capabilities</p>
+        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-center text-foreground mb-4 tracking-tight">
+          What we build, <span className="text-gradient-blue">in plain terms.</span>
         </h2>
         <p className="font-body text-base text-muted-foreground text-center max-w-2xl mx-auto mb-20">
           Four disciplines, one practice. Engagements typically blend two or three.
         </p>
 
-        <div className="grid md:grid-cols-2 gap-px bg-border max-w-6xl mx-auto border border-border">
+        <div className="grid md:grid-cols-2 gap-5 max-w-6xl mx-auto">
           {capabilities.map((c) => (
-            <article key={c.title} className="bg-background p-10">
-              <c.icon className="text-accent mb-6" size={28} strokeWidth={1.25} />
-              <h3 className="font-heading text-xl text-foreground mb-3">{c.title}</h3>
+            <article
+              key={c.title}
+              className="bg-white p-10 rounded-xl border border-border transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_12px_32px_-12px_rgba(59,130,246,0.25)]"
+              style={{ boxShadow: "0 4px 16px -4px rgba(15,23,42,0.06)" }}
+            >
+              <c.icon className="text-accent mb-6" size={28} strokeWidth={1.5} />
+              <h3 className="font-heading font-semibold text-xl text-foreground mb-3 tracking-tight">{c.title}</h3>
               <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6">{c.body}</p>
-              <p className="label-eyebrow mb-3 text-foreground/70">For example</p>
+              <p className="label-eyebrow mb-3 text-accent/80">For example</p>
               <ul className="space-y-2">
                 {c.examples.map((ex) => (
                   <li

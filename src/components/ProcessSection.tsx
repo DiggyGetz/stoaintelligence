@@ -29,39 +29,25 @@ const phases = [
 ];
 
 const numeralStyle: CSSProperties = {
-  background: "linear-gradient(135deg, hsl(36 70% 75%) 0%, hsl(32 44% 46%) 100%)",
+  background: "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
   WebkitBackgroundClip: "text",
   WebkitTextFillColor: "transparent",
   backgroundClip: "text",
-};
-
-const cardBase: CSSProperties = {
-  background: "hsl(217 36% 11% / 0.8)",
-  backdropFilter: "blur(10px)",
-  WebkitBackdropFilter: "blur(10px)",
-  border: "1px solid hsl(32 42% 52% / 0.12)",
-  boxShadow: "0 4px 24px -8px hsl(217 60% 4% / 0.4)",
-};
-
-const cardHover: CSSProperties = {
-  border: "1px solid hsl(32 42% 52% / 0.35)",
-  boxShadow: "0 8px 40px -8px hsl(32 42% 20% / 0.3)",
 };
 
 export default function ProcessSection() {
   const ref = useScrollFadeIn();
 
   return (
-    <section id="process" className="relative py-32 border-t border-border overflow-hidden">
-      <div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse at 50% 100%, hsl(32 42% 28% / 0.06) 0%, transparent 55%)" }}
-      />
+    <section
+      id="process"
+      className="relative py-32 overflow-hidden"
+      style={{ background: "#f8fafc" }}
+    >
       <div ref={ref} className="fade-in-section relative container mx-auto px-6 max-w-6xl">
-        <p className="label-eyebrow mb-6 text-center">The Method</p>
-        <h2 className="font-heading font-normal text-3xl sm:text-4xl text-center text-foreground mb-4">
-          Survey · Blueprint · Build · <span className="text-accent">Refine</span>
+        <p className="label-eyebrow text-accent mb-6 text-center">The Method</p>
+        <h2 className="font-heading font-bold text-3xl sm:text-4xl text-center text-foreground mb-4 tracking-tight">
+          Survey · Blueprint · Build · <span style={numeralStyle}>Refine</span>
         </h2>
         <p className="font-body text-base text-muted-foreground text-center max-w-2xl mx-auto mb-20">
           Four phases. Borrowed from architecture because building a business is the same discipline.
@@ -71,27 +57,33 @@ export default function ProcessSection() {
           {phases.map((p, i) => (
             <div
               key={p.title}
-              className="group relative p-8 flex flex-col transition-all duration-500 hover:-translate-y-1"
-              style={cardBase}
-              onMouseEnter={(e) => Object.assign((e.currentTarget as HTMLElement).style, cardHover)}
-              onMouseLeave={(e) => Object.assign((e.currentTarget as HTMLElement).style, cardBase)}
+              className="group relative p-8 flex flex-col bg-white border border-border rounded-xl transition-all duration-300 hover:-translate-y-1 hover:border-accent/60 hover:shadow-[0_12px_32px_-12px_rgba(59,130,246,0.25)]"
+              style={{ boxShadow: "0 4px 16px -4px rgba(15,23,42,0.06)" }}
             >
               {i < phases.length - 1 && (
-                <div aria-hidden
-                  className="hidden md:block absolute -right-2.5 top-9 w-5 h-px z-10"
-                  style={{ background: "linear-gradient(to right, hsl(32 42% 52% / 0.35), transparent)" }}
+                <div
+                  aria-hidden
+                  className="hidden md:block absolute -right-3 top-9 w-6 h-px z-10"
+                  style={{
+                    background: "linear-gradient(to right, rgba(59,130,246,0.4), transparent)",
+                  }}
                 />
               )}
-              <span className="font-body text-4xl font-light mb-6 leading-none block" style={numeralStyle}>
+              <span
+                className="font-heading text-4xl font-light mb-6 leading-none block"
+                style={numeralStyle}
+              >
                 {p.numeral}
               </span>
-              <h3 className="font-heading text-xl text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
+              <h3 className="font-heading font-semibold text-xl text-foreground mb-3 group-hover:text-accent transition-colors duration-300">
                 {p.title}
               </h3>
-              <div className="hairline mb-5" />
-              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6 flex-1">{p.body}</p>
-              <p className="label-eyebrow mb-1" style={{ color: "hsl(32 42% 52% / 0.7)" }}>Deliverable</p>
-              <p className="font-body text-xs leading-relaxed" style={{ color: "hsl(36 32% 90% / 0.65)" }}>
+              <div className="h-px w-12 bg-accent/60 mb-5" />
+              <p className="font-body text-sm text-muted-foreground leading-relaxed mb-6 flex-1">
+                {p.body}
+              </p>
+              <p className="label-eyebrow mb-1 text-accent/80">Deliverable</p>
+              <p className="font-body text-xs leading-relaxed text-muted-foreground">
                 {p.deliverable}
               </p>
             </div>

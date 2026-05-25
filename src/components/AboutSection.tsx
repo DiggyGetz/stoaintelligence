@@ -7,10 +7,10 @@ export default function AboutSection() {
   const ref = useScrollFadeIn();
 
   return (
-    <section id="about" className="relative py-32 border-t border-border overflow-hidden">
+    <section id="about" className="relative py-32 border-t border-border overflow-hidden bg-background">
       <div
         aria-hidden
-        className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-no-repeat opacity-[0.07] pointer-events-none"
+        className="absolute right-0 top-0 bottom-0 w-1/2 bg-cover bg-no-repeat opacity-[0.04] pointer-events-none"
         style={{ backgroundImage: `url(${discobolus})`, backgroundPosition: "right center" }}
       />
       <div
@@ -18,7 +18,7 @@ export default function AboutSection() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 50%, hsl(217 38% 11% / 0.4) 0%, hsl(217 38% 11% / 0.95) 75%, hsl(217 40% 9%) 100%)",
+            "radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.95) 75%, #ffffff 100%)",
         }}
       />
       <div ref={ref} className="fade-in-section relative container mx-auto px-6 max-w-5xl">
@@ -27,9 +27,9 @@ export default function AboutSection() {
             <div className="mb-6">
               <img src={logo} alt="Stoa Intelligence Discobolus mark" width={32} height={32} className="h-8 w-8 object-contain" />
             </div>
-            <p className="label-eyebrow mb-6">Why Stoa Intelligence</p>
-            <h2 className="font-heading font-normal text-3xl sm:text-4xl text-foreground mb-8 leading-snug">
-              Precision is a <span className="text-accent">discipline</span>, not a personality trait.
+            <p className="label-eyebrow text-accent mb-6">Why Stoa Intelligence</p>
+            <h2 className="font-heading font-bold text-3xl sm:text-4xl text-foreground mb-8 leading-snug tracking-tight">
+              Precision is a <span className="text-gradient-blue">discipline</span>, not a personality trait.
             </h2>
             <div className="space-y-5 font-body text-base text-muted-foreground leading-relaxed">
               <p>
@@ -72,7 +72,7 @@ export default function AboutSection() {
         </div>
 
         <div className="border-t border-border pt-20">
-          <p className="label-eyebrow mb-6 text-center">The Founder</p>
+          <p className="label-eyebrow text-accent mb-6 text-center">The Founder</p>
 
           <div className="max-w-2xl mx-auto text-center">
             <div className="relative w-44 h-44 mx-auto mb-8">
