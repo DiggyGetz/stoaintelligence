@@ -78,26 +78,14 @@ export default function PackagesSection() {
             <article
               key={p.name}
               className="group relative flex flex-col p-10 rounded-xl transition-all duration-500 hover:-translate-y-1"
-              style={
-                p.emphasis
-                  ? {
-                      background: "#eff6ff",
-                      backdropFilter: "blur(8px)",
-                      WebkitBackdropFilter: "blur(8px)",
-                      border: "1px solid #3b82f6",
-                      boxShadow:
-                        "0 0 0 1px rgba(59,130,246,0.15), 0 24px 60px -20px rgba(59,130,246,0.35)",
-                    }
-                  : {
-                      background: "#ffffff",
-                      backdropFilter: "blur(8px)",
-                      WebkitBackdropFilter: "blur(8px)",
-                      border: "1px solid hsl(214 32% 91%)",
-                      boxShadow: "0 4px 24px -8px rgba(15,23,42,0.08)",
-                    }
-              }
+              style={{
+                background: "#ffffff",
+                backdropFilter: "blur(8px)",
+                WebkitBackdropFilter: "blur(8px)",
+                border: "1px solid hsl(214 32% 91%)",
+                boxShadow: "0 4px 24px -8px rgba(15,23,42,0.08)",
+              }}
               onMouseEnter={(e) => {
-                if (p.emphasis) return;
                 const el = e.currentTarget;
                 el.style.background = "#eff6ff";
                 el.style.border = "1px solid #3b82f6";
@@ -105,7 +93,6 @@ export default function PackagesSection() {
                   "0 0 0 1px rgba(59,130,246,0.15), 0 24px 60px -20px rgba(59,130,246,0.35)";
               }}
               onMouseLeave={(e) => {
-                if (p.emphasis) return;
                 const el = e.currentTarget;
                 el.style.background = "#ffffff";
                 el.style.border = "1px solid hsl(214 32% 91%)";
@@ -114,9 +101,7 @@ export default function PackagesSection() {
             >
               <div
                 aria-hidden
-                className={`absolute inset-x-0 top-0 h-32 rounded-t-xl pointer-events-none transition-opacity duration-500 ${
-                  p.emphasis ? "opacity-100" : "opacity-0 group-hover:opacity-100"
-                }`}
+                className="absolute inset-x-0 top-0 h-32 rounded-t-xl pointer-events-none transition-opacity duration-500 opacity-0 group-hover:opacity-100"
                 style={{
                   background:
                     "radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.18) 0%, transparent 70%)",
@@ -126,9 +111,8 @@ export default function PackagesSection() {
                 <p className="label-eyebrow text-accent mb-3">{p.tagline}</p>
                 <h3
                   className="font-heading font-light text-2xl mb-2 tracking-tight transition-colors duration-500"
-                  style={p.emphasis ? gradientTextStyle : { color: "hsl(222 47% 11%)" }}
+                  style={{ color: "hsl(222 47% 11%)" }}
                   onMouseEnter={(e) => {
-                    if (p.emphasis) return;
                     const el = e.currentTarget;
                     el.style.background = "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)";
                     el.style.webkitBackgroundClip = "text";
@@ -136,7 +120,6 @@ export default function PackagesSection() {
                     el.style.webkitTextFillColor = "transparent";
                   }}
                   onMouseLeave={(e) => {
-                    if (p.emphasis) return;
                     const el = e.currentTarget;
                     el.style.background = "";
                     el.style.webkitBackgroundClip = "";
