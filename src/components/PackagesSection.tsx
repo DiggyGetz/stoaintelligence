@@ -77,7 +77,7 @@ export default function PackagesSection() {
           {packages.map((p) => (
             <article
               key={p.name}
-              className="relative flex flex-col p-10 rounded-xl transition-all duration-500 hover:-translate-y-1"
+              className="group relative flex flex-col p-10 rounded-xl transition-all duration-500 hover:-translate-y-1"
               style={
                 p.emphasis
                   ? {
@@ -96,22 +96,54 @@ export default function PackagesSection() {
                       boxShadow: "0 4px 24px -8px rgba(15,23,42,0.08)",
                     }
               }
+              onMouseEnter={(e) => {
+                if (p.emphasis) return;
+                const el = e.currentTarget;
+                el.style.background = "#eff6ff";
+                el.style.border = "1px solid #3b82f6";
+                el.style.boxShadow =
+                  "0 0 0 1px rgba(59,130,246,0.15), 0 24px 60px -20px rgba(59,130,246,0.35)";
+              }}
+              onMouseLeave={(e) => {
+                if (p.emphasis) return;
+                const el = e.currentTarget;
+                el.style.background = "#ffffff";
+                el.style.border = "1px solid hsl(214 32% 91%)";
+                el.style.boxShadow = "0 4px 24px -8px rgba(15,23,42,0.08)";
+              }}
             >
-              {p.emphasis && (
-                <div
-                  aria-hidden
-                  className="absolute inset-x-0 top-0 h-32 rounded-t-xl pointer-events-none"
-                  style={{
-                    background:
-                      "radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.18) 0%, transparent 70%)",
-                  }}
-                />
-              )}
+              <div
+                aria-hidden
+                className={`absolute inset-x-0 top-0 h-32 rounded-t-xl pointer-events-none transition-opacity duration-500 ${
+                  p.emphasis ? "opacity-100" : "opacity-0 group-hover:opacity-100"
+                }`}
+                style={{
+                  background:
+                    "radial-gradient(ellipse at 50% 0%, rgba(59,130,246,0.18) 0%, transparent 70%)",
+                }}
+              />
               <header className="relative mb-6">
                 <p className="label-eyebrow text-accent mb-3">{p.tagline}</p>
                 <h3
-                  className="font-heading font-light text-2xl mb-2 tracking-tight"
+                  className="font-heading font-light text-2xl mb-2 tracking-tight transition-colors duration-500"
                   style={p.emphasis ? gradientTextStyle : { color: "hsl(222 47% 11%)" }}
+                  onMouseEnter={(e) => {
+                    if (p.emphasis) return;
+                    const el = e.currentTarget;
+                    el.style.background = "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)";
+                    el.style.webkitBackgroundClip = "text";
+                    el.style.backgroundClip = "text";
+                    el.style.webkitTextFillColor = "transparent";
+                  }}
+                  onMouseLeave={(e) => {
+                    if (p.emphasis) return;
+                    const el = e.currentTarget;
+                    el.style.background = "";
+                    el.style.webkitBackgroundClip = "";
+                    el.style.backgroundClip = "";
+                    el.style.webkitTextFillColor = "";
+                    el.style.color = "hsl(222 47% 11%)";
+                  }}
                 >
                   {p.name}
                 </h3>
