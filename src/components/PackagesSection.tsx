@@ -150,11 +150,7 @@ export default function PackagesSection() {
                 href={CALENDLY}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`relative inline-block text-center px-6 py-3 text-xs font-body font-semibold tracking-widest uppercase rounded-md transition-all duration-300 ${
-                  p.emphasis
-                    ? "bg-accent text-white hover:bg-accent/90 shadow-[0_8px_24px_-8px_rgba(59,130,246,0.5)]"
-                    : "border border-accent text-accent hover:bg-accent hover:text-white"
-                }`}
+                className="relative inline-block text-center px-6 py-3 text-xs font-body font-semibold tracking-widest uppercase rounded-md transition-all duration-300 border border-accent text-accent hover:bg-accent hover:text-white"
               >
                 Discuss the Engagement
               </a>
